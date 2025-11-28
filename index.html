@@ -1,4 +1,3 @@
-#
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>3D Tech Engineering</title>
 
-  <!-- ========== FAVICON ========== -->
-  <!-- Replace "favicon.ico" with your favicon file path -->
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <!-- ========== FAVICON (uses your PNG logo) ========== -->
+  <link rel="icon" type="image/png" href="3D Tech Engineering Logo.png">
 
   <!-- ========== STYLES ========== -->
   <style>
@@ -37,6 +35,7 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     header img {
@@ -75,7 +74,7 @@
       margin-top: auto;
     }
 
-    /* Mobile friendly */
+    /* Responsive design */
     @media (max-width: 600px) {
       h1 {
         font-size: 2rem;
@@ -97,8 +96,8 @@
 
   <!-- ========== HEADER ========== -->
   <header>
-    <!-- Replace image source with your logo file -->
-    <img src="logo.png" alt="3D Tech Engineering Logo">
+    <!-- Your main logo -->
+    <img src="3D Tech Engineering Logo.png" alt="3D Tech Engineering Logo">
   </header>
 
   <!-- ========== INTRO SECTION ========== -->
@@ -108,7 +107,7 @@
     <p>
       At <strong>3D Tech Engineering</strong>, we specialize in designing and manufacturing
       high-quality 3D printed creations — from precision-engineered mechanical parts to 
-      creative art pieces, toys, and build kits. 
+      creative art pieces, toys, and build kits.
     </p>
     <p>
       Our mission is to bring ideas to life using advanced 3D printing technology 
@@ -116,38 +115,43 @@
       <em>bulk production solutions</em>, our team of experts is ready to assist you.
     </p>
 
+    <!-- ========== API SECTION ========== -->
     <section id="api-section">
       <h2>Live Data & API Integration</h2>
       <p>
         You’ll be able to connect your own APIs here.  
         Add your API key in the script below to display live data, project stats, or real-time updates.
       </p>
-      <div id="api-data" style="margin-top:20px; font-weight:bold; color:#555;">Waiting for API data...</div>
+      <div id="api-data" style="margin-top:20px; font-weight:bold; color:#555;">
+        Waiting for API data...
+      </div>
     </section>
   </main>
 
+  <!-- ========== FOOTER ========== -->
   <footer>
     &copy; <span id="year"></span> 3D Tech Engineering | All Rights Reserved.
   </footer>
 
   <!-- ========== SCRIPTS ========== -->
   <script>
-    // Set dynamic year in footer
+    // Set dynamic year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Placeholder for your API integration
     const API_KEY = "YOUR_API_KEY_HERE"; // Replace later
     async function loadAPIData() {
       try {
-        // Example fetch using API_KEY (replace URL when ready)
-        // let response = await fetch(`https://yourapi.com/data?key=${API_KEY}`);
-        // let data = await response.json();
+        // Example fetch using API_KEY
+        // const response = await fetch(`https://yourapi.com/data?key=${API_KEY}`);
+        // const data = await response.json();
         // document.getElementById("api-data").textContent = 'Data Loaded: ' + JSON.stringify(data);
 
-        document.getElementById("api-data").textContent = 
+        document.getElementById("api-data").textContent =
           "API connection ready. Add your API endpoint to show data here!";
       } catch (error) {
-        document.getElementById("api-data").textContent = "Error loading API data.";
+        document.getElementById("api-data").textContent =
+          "Error loading API data. Please check your key or endpoint.";
       }
     }
 
